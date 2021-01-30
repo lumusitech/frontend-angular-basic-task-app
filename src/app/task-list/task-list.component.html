@@ -1,0 +1,50 @@
+<div class="grid">
+  <div *ngFor="let t of currentList; let i = index">
+    <ng-container *ngIf="t.completed">
+      <div class="task task--completed" *ngIf="!t.deleted">
+        <p class="task__id">{{ i }}</p>
+        <div class="task-title-description">
+          <div class="task__title"><span>Titulo: </span>{{ t.title }}</div>
+          <div class="task__description">
+            <span>Descripción: </span>{{ t.description }}
+          </div>
+        </div>
+        <div>
+          <button *ngIf="!t.completed" (click)="onClickComplete($event)">
+            Completar
+          </button>
+          <button *ngIf="t.completed" (click)="onClickComplete($event)">
+            Rehacer
+          </button>
+
+          <button (click)="onClickDelete($event)" class="delete">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!t.completed">
+      <div class="task" *ngIf="!t.deleted">
+        <p class="task__id">{{ i }}</p>
+        <div class="task-title-description">
+          <div class="task__title"><span>Titulo: </span>{{ t.title }}</div>
+          <div class="task__description">
+            <span>Descripción: </span>{{ t.description }}
+          </div>
+        </div>
+        <div>
+          <button *ngIf="!t.completed" (click)="onClickComplete($event)">
+            Completar
+          </button>
+          <button *ngIf="t.completed" (click)="onClickComplete($event)">
+            Rehacer
+          </button>
+
+          <button (click)="onClickDelete($event)" class="delete">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

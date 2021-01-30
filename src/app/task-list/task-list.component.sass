@@ -1,0 +1,87 @@
+.grid
+  display: flex
+  flex-wrap: wrap
+  margin: 0
+  padding: 0
+
+  .task
+    background: rgba(155, 60, 50, .7)
+    display: flex
+    height: fit-content
+    flex-direction: column
+    justify-content: space-between
+    padding: 1em
+    margin: 1em
+    border-radius: 10px
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5)
+    transition: all .3s
+    &--completed
+      background: rgba(70, 155, 100, .7)
+    &__id
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 0
+      padding: 5px
+      font-size: .7em
+      border-radius: 50%
+      background: rgba(100, 30, 30, .5)
+      color: #f2f2f2
+      width: 15px
+      height: 15px
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, .3)
+
+    &:hover
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, .4)
+    &__title
+      padding: 1em
+      font-weight: 600
+      & span
+        font-size: 1.2em
+        color: #FFF
+
+    &__description
+      padding: 1em
+      font-weight: 600
+      width: 150px
+      & span
+        font-size: 1.2em
+        color: #FFF
+
+    &__buttons
+      width: 100%
+      margin-left: 3.5em
+      transition: all .3s
+    & button
+      display: inline-flex
+      width: fit-content
+      margin-left: 1em
+      padding: .8em
+      border: none
+      border-radius: 10px
+      background: #105050
+      color: #f2f2f2
+      box-shadow: 1px 3px 7px rgba(0, 0, 0, .7)
+      transition: all .2s
+
+      &:focus
+        outline: none
+      &:active
+        border: none
+        background: #127070!important
+
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, .5)
+
+      &:hover
+        background: #306666
+        cursor: pointer
+
+      &.delete
+        background: rgba(150, 15, 15, .6)
+
+        &:hover
+          background: rgba(200, 15, 15, .7)
+        &:active
+          border: none
+          background: rgba(250, 15, 15, .7)!important
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, .5)

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="container__title">
+    <span>🔖</span>
+    <input
+      type="text"
+      placeholder="Título de la tarea"
+      [(ngModel)]="task.title"
+    />
+  </div>
+  <div class="container__description">
+    <span>📑</span>
+    <input
+      type="text"
+      placeholder="Descripción de la tarea"
+      [(ngModel)]="task.description"
+    />
+  </div>
+  <div class="container__button">
+    <button (click)="onClick($event)">Crear tarea</button>
+  </div>
+</div>
