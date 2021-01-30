@@ -6,18 +6,11 @@
 
     <div class="container__recyclerbin">
       <h3>♻️ Papelera</h3>
-      <app-recycler-bin
-        [currentList]="taskList"
-        (restoreTaskEvent)="onDeletedEvent($event)"
-      ></app-recycler-bin>
+      <app-recycler-bin [currentList]="taskList"></app-recycler-bin>
     </div>
   </div>
 
   <div class="container__taskList">
-    <app-task-list
-      [currentList]="taskList"
-      (completedEvent)="onCompletedEvent($event)"
-      (deletedEvent)="onDeletedEvent($event)"
-    ></app-task-list>
+    <app-task-list [currentList]="taskList"></app-task-list>
   </div>
 </div>

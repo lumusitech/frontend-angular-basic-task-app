@@ -6,7 +6,7 @@
       <p class="container__task">
         Título: {{ item.title }} - Descripción: {{ item.description }}
       </p>
-      <button class="container__restore" (click)="onClick($event)">
+      <button class="container__restore" (click)="onClick(item)">
         Restaurar
       </button>
     </div>

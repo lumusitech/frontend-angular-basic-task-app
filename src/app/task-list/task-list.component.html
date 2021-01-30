@@ -1,14 +1,13 @@
 <div class="grid">
   <div
-    *ngFor="let t of currentList; let i = index"
+    *ngFor="let t of currentList"
     [ngClass]="{
+      task: true,
       complete: t.completed,
       incomplete: !t.completed,
-      deleted: t.deleted,
-      task: true
+      deleted: t.deleted
     }"
   >
-    <p class="task__id">{{ i }}</p>
     <div class="task-title-description">
       <div class="task__title"><span>Titulo: </span>{{ t.title }}</div>
       <div class="task__description">
@@ -16,14 +15,8 @@
       </div>
     </div>
     <div>
-      <button *ngIf="!t.completed" (click)="onClickComplete($event)">
-        Completar
-      </button>
-      <button *ngIf="t.completed" (click)="onClickComplete($event)">
-        Rehacer
-      </button>
-
-      <button (click)="onClickDelete($event)" class="delete">Eliminar</button>
+      <button (click)="onClickComplete(t, $event)">Completar</button>
+      <button (click)="onClickDelete(t)" class="delete">Eliminar</button>
     </div>
   </div>
 </div>
