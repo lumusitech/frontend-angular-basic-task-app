@@ -1,22 +1,24 @@
 <div class="grid">
   <div
-    *ngFor="let t of currentList"
+    *ngFor="let task of currentList"
     [ngClass]="{
       task: true,
-      complete: t.completed,
-      incomplete: !t.completed,
-      deleted: t.deleted
+      complete: task.completed,
+      incomplete: !task.completed,
+      deleted: task.deleted
     }"
   >
     <div class="task-title-description">
-      <div class="task__title"><span>Titulo: </span>{{ t.title }}</div>
+      <div class="task__title"><span>Titulo: </span>{{ task.title }}</div>
       <div class="task__description">
-        <span>Descripción: </span>{{ t.description }}
+        <span>Descripción: </span>{{ task.description }}
       </div>
     </div>
     <div>
-      <button (click)="onClickComplete(t, $event)">Completar</button>
-      <button (click)="onClickDelete(t)" class="delete">Eliminar</button>
+      <button (click)="onClickComplete(task)">
+        {{ task.completed ? "Rehacer" : "Completar" }}
+      </button>
+      <button (click)="onClickDelete(task)" class="delete">Quitar</button>
     </div>
   </div>
 </div>

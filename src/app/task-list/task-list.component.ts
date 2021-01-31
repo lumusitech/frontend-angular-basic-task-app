@@ -17,10 +17,8 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickComplete(tarea: Task, $event: any): void {
+  onClickComplete(tarea: Task): void {
     tarea.completed = !tarea.completed;
-    if (tarea.completed) $event.target.innerText = "Rehacer";
-    else $event.target.innerText = "Completar"
   }
 
   onClickDelete(tarea: Task): void {

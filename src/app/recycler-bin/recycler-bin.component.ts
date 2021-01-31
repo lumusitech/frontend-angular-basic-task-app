@@ -17,8 +17,13 @@ export class RecyclerBinComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick($event: Task): void {
+  onClickDelete($event: Task): void {
     $event.deleted = !$event.deleted;
+  }
+
+  onClickDestroy(i: number): void {
+    let confirmed: boolean = confirm("La nota se borrará definitivamente, Está seguro que quiere proceder?");
+    if (confirmed) this.currentList.splice(i, 1);
   }
 
 }

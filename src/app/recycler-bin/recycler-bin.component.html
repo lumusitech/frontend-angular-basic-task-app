@@ -1,14 +1,22 @@
-<div *ngFor="let item of currentList">
+<div *ngFor="let item of currentList; let i = index">
   <ng-container *ngIf="item.deleted">
     <div class="container">
-      <span class="container__id">{{ item.id }}</span>
-      <span class="container__icon">❌</span>
-      <p class="container__task">
-        Título: {{ item.title }} - Descripción: {{ item.description }}
-      </p>
-      <button class="container__restore" (click)="onClick(item)">
-        Restaurar
-      </button>
+      <div class="container__info">
+        <p class="container__task">
+          Título: <span>{{ item.title }}</span>
+        </p>
+        <p class="container__task-desc">Descripción:</p>
+        <p>{{ item.description }}</p>
+      </div>
+      <div class="container__buttons">
+        <button class="container__restore" (click)="onClickDelete(item)">
+          Restaurar
+        </button>
+        <button class="container__restore delete" (click)="onClickDestroy(i)">
+          Borrar
+        </button>
+      </div>
     </div>
+    <hr class="line" />
   </ng-container>
 </div>
