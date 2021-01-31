@@ -18,4 +18,9 @@ export class AppComponent {
     $event.id = this.taskList.length;
     this.taskList.push($event);
   }
+
+  onClick(): void {
+    let confirmed = confirm("Vaciar la papelera de notas?");
+    if (confirmed) this.taskList = this.taskList.filter(task => !task.deleted);
+  }
 }

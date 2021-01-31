@@ -5,7 +5,11 @@
     </div>
 
     <div class="container__recyclerbin">
-      <h3>♻️ Papelera</h3>
+      <div class="container__recyclerbin-header">
+        <h3>♻️ Papelera</h3>
+        <button (click)="onClick()">Vaciar</button>
+      </div>
+      <hr class="line" />
       <app-recycler-bin [currentList]="taskList"></app-recycler-bin>
     </div>
   </div>

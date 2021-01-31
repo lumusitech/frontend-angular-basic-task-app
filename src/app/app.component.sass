@@ -38,9 +38,33 @@
     position: absolute
     top: 300px
     left: 20px
+    &-header
+      display: grid
+      grid-template-columns: 5fr 1fr
+      & button
+        margin-left: 1em
+        width: fit-content
+        padding: .5em
+        border: none
+        border-radius: 10px
+        color: #f2f2f2
+        box-shadow: 1px 3px 7px rgba(0, 0, 0, .7)
+        transition: all .2s
+        background: rgba(150, 15, 15, .6)
+        &:focus
+          outline: none
+        &:active
+          border: none
+          background: rgba(250, 15, 15, .7)!important
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, .5)
+        &:hover
+          background: rgba(200, 15, 15, .7)
+          cursor: pointer
 
-    &:hover
-      box-shadow: 1px 2px 5px rgba(0, 0, 0, .4)
-    & h3
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
-      margin: 0
+      & h3
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
+        margin: 0
+    .line
+      border: .5px solid #105050
+      background: #105050
+      box-shadow: .5px .5px 1px rgba(0, 0, 0, 0.5)
